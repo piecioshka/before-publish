@@ -10,9 +10,22 @@
   npm pkg fix
   ```
 
-- [ ] `package.json`: replace [istanbul](https://www.npmjs.com/package/istanbul) by [nyc](https://www.npmjs.com/package/nyc)
+- [ ] .github/workflows/testing.yml: support all Node.js version
+
+  ```yml
+  node-version: [10.x, 12.x, 14.x, 16.x, 18.x, 20.x]
+  ```
 
 - [ ] `package.json`: remove `preferGlobal`
+
+- [ ] `package.json/scripts`: replace all emoji nick to particular drawing
+  - :hammer: -> 🔨
+
+- [ ] `package.json/scripts`: remove `"postversion": "git push --tags"`
+
+- [ ] `package.json/devDependencies`: replace [istanbul](https://www.npmjs.com/package/istanbul) by [nyc](https://www.npmjs.com/package/nyc)
+
+- [ ] `package.json/devDependencies`: add `@types/jest` when `jest` is used
 
 - [ ] `package.json/engines`: should includes:
 
