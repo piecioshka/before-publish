@@ -4,6 +4,10 @@
 
 ## List of best practices
 
+- [ ] remove `dist/` directory from Git repository
+  - there is not need to keep compiled files in Git repository
+  - add it to .gitignore file
+
 - [ ] run npm built-in command, to check if everything is ok (this command would fix some issues):
 
   ```bash
@@ -21,11 +25,21 @@
 - [ ] `package.json/scripts`: replace all emoji nick to particular drawing
   - :hammer: -> 🔨
 
-- [ ] `package.json/scripts`: remove `"postversion": "git push --tags"`
-  - it's not necessary, because `git sync` will do it
+- [ ] `package.json/scripts`: remove it's not necessary, because `git sync` will do it
 
-- [ ] `package.json/scripts`: add `"version": "npm run build"`
-  - to deploy always fresh version of code
+  ```json
+  {
+    "postversion": "git push --tags"
+  }
+  ```
+
+- [ ] `package.json/scripts`: add "version" to build changelog
+
+  ```json
+  {
+    "version": "auto-changelog -p && git add CHANGELOG.md"
+  }
+  ```
 
 - [ ] `package.json/devDependencies`: replace [istanbul](https://www.npmjs.com/package/istanbul) by [nyc](https://www.npmjs.com/package/nyc)
 
