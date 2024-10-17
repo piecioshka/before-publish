@@ -22,6 +22,10 @@
   - :hammer: -> 🔨
 
 - [ ] `package.json/scripts`: remove `"postversion": "git push --tags"`
+  - it's not necessary, because `git sync` will do it
+
+- [ ] `package.json/scripts`: add `"version": "npm run build"`
+  - to deploy always fresh version of code
 
 - [ ] `package.json/devDependencies`: replace [istanbul](https://www.npmjs.com/package/istanbul) by [nyc](https://www.npmjs.com/package/nyc)
 
