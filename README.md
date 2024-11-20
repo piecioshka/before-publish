@@ -6,7 +6,7 @@
 
 - [ ] remove `dist/` directory from Git repository
   - there is not need to keep compiled files in Git repository
-  - add it to .gitignore file
+  - add `dist/` to `.gitignore` file
 
 - [ ] run npm built-in command, to check if everything is ok (this command would fix some issues):
 
@@ -14,16 +14,16 @@
   npm pkg fix
   ```
 
-- [ ] .github/workflows/testing.yml: support all Node.js version
+- [ ] `.github/workflows/testing.yml`: support all Node.js version
 
   ```yml
-  node-version: [10.x, 12.x, 14.x, 16.x, 18.x, 20.x]
+  node-version: [10.x, 12.x, 14.x, 16.x, 18.x, 20.x, 22.x]
   ```
 
 - [ ] `package.json`: remove `preferGlobal`
 
 - [ ] `package.json/scripts`: replace all emoji nick to particular drawing
-  - :hammer: -> 🔨
+  - `:hammer:` -> 🔨
 
 - [ ] `package.json/scripts`: remove it's not necessary, because `git sync` will do it
 
