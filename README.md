@@ -4,9 +4,14 @@
 
 ## List of best practices
 
-- [ ] remove `dist/` directory from Git repository
+- [ ] remove `dist/` directory from root directory
+
   - there is not need to keep compiled files in Git repository
-  - add `dist/` to `.gitignore` file
+  - this directory will be in package uploaded to npm registry
+
+- [ ] remove LICENSE file from root directory
+
+  - https://github.com/search?q=owner%3Apiecioshka%20path%3ALICENSE&type=code
 
 - [ ] run npm built-in command, to check if everything is ok (this command would fix some issues):
 
@@ -23,7 +28,11 @@
 - [ ] `package.json`: remove `preferGlobal`
 
 - [ ] `package.json/scripts`: replace all emoji nick to particular drawing
+
   - `:hammer:` -> 🔨
+  - `:white_check_mark:` -> ✅
+  - `:ledger:` -> 📒
+  - `:clipboard:` -> 📋
 
 - [ ] `package.json/scripts`: remove it's not necessary, because `git sync` will do it
 
@@ -58,10 +67,12 @@
   - `types/`
   - `index.js`
   - `package.json`
-  - `LICENSE`
   - `README.md`
 
-- [ ] `package.json/files`: do no add `.github/`
+- [ ] `package.json/files`: should not includes
+
+  - `.github/`
+  - `LICENSE`
 
 - [ ] `package.json/files`: ignore spec files:
 
@@ -81,6 +92,7 @@
   - `npm-debug.log`
   - `coverage/`
   - `.nyc_output/`
+  - `dist/`
 
 - [ ] `README.md`: update URL for license badge to https://piecioshka.mit-license.org
 
@@ -102,6 +114,7 @@
   ```
 
 - [ ] `.markdownlint.json`: remove this file, left only for projects:
+
   - `*-guide`
   - `slides-*`
   - `*-workshop-*`
