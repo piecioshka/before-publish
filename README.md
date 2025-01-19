@@ -58,6 +58,8 @@
 
   - `node`
 
+- [ ] `.nvmrc` should be defined in the root directory
+
 - [ ] `package.json/files`: should includes:
 
   - `demo/`
@@ -88,22 +90,29 @@
 
 - [ ] `.gitignore`: should includes:
 
-  - `node_modules/`
-  - `npm-debug.log`
-  - `coverage/`
-  - `.nyc_output/`
-  - `dist/`
+  ```text
+  node_modules/
+  npm-debug.log
+
+  coverage/
+  .nyc_output/
+  dist/
+  tmp/
+
+  !.vscode/
+  ```
 
 - [ ] `README.md`: update URL for license badge to https://piecioshka.mit-license.org
 
 - [ ] `README.md`: update badges, should have:
 
+  - cli available (optional)
   - node version
   - npm version
   - downloads count
-  - license
   - size
-  - github-ci
+  - license
+  - github-ci (testing)
 
 - [ ] `.nycrc` for projects which use `nyc` and has spec files in the same directory as source files:
 
