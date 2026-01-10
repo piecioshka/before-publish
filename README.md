@@ -106,8 +106,8 @@
 
 - [ ] `README.md`: use this format for license section:
 
-    ``md
-    [The MIT License](https://piecioshka.mit-license.org) @ 20??
+    ```md
+    [The MIT License](https://piecioshka.mit-license.org) @ 2000
     ```
 
 - [ ] `README.md`: update badges, should have:
