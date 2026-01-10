@@ -52,6 +52,8 @@
 
 - [ ] `package.json/devDependencies`: replace [istanbul](https://www.npmjs.com/package/istanbul) by [nyc](https://www.npmjs.com/package/nyc)
 
+- [ ] `package.json/devDependencies`: replace [yargs](https://www.npmjs.com/package/yargs) by [minimist](https://www.npmjs.com/package/minimist)
+
 - [ ] `package.json/devDependencies`: add `@types/jest` when `jest` is used
 
 - [ ] `package.json/engines`: should includes:
@@ -102,7 +104,11 @@
   !.vscode/
   ```
 
-- [ ] `README.md`: update URL for license badge to https://piecioshka.mit-license.org
+- [ ] `README.md`: use this format for license section:
+
+    ``md
+    [The MIT License](https://piecioshka.mit-license.org) @ 20??
+    ```
 
 - [ ] `README.md`: update badges, should have:
 
@@ -113,6 +119,8 @@
   - size
   - license
   - github-ci (testing)
+
+  Take a look at https://github.com/piecioshka/template-project
 
 - [ ] `.nycrc` for projects which use `nyc` and has spec files in the same directory as source files:
 
