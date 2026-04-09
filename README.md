@@ -92,6 +92,25 @@
 
 - [ ] `package.json/types`: it should refers to `types/index.d.ts`
 
+- [ ] `package.json/repository`: it should be an object with `type` and `url` properties, not a string
+
+  ```json
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/<username>>/<project_name>.git"
+  },
+  ```
+
+- [ ] `package.json/author`: it should be an object with `name` and `email` properties, not a string
+
+  ```json
+  "author": {
+    "name": "<name>",
+    "email": "<email>",
+    "url": "<url>"
+  },
+  ```
+
 - [ ] `.gitignore`: should includes:
 
   ```text
