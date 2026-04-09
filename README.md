@@ -25,6 +25,8 @@
   node-version: [10.x, 12.x, 14.x, 16.x, 18.x, 20.x, 22.x]
   ```
 
+  Workflow file should has name `testing.yml`, so if there is a another workflow file with unit tests eg. `test.yml`, it should be renamed to `testing.yml`.
+
 - [ ] `package.json`: remove `preferGlobal`
 
 - [ ] `package.json/scripts`: replace all emoji nick to particular drawing
@@ -60,7 +62,7 @@
 
   - `node`
 
-- [ ] `.nvmrc` should be defined in the root directory
+- [ ] `.nvmrc` should be defined in the root directory (not direct version, but code name, e.g. `hydrogen` for Node.js 24)
 
 - [ ] `package.json/files`: should includes:
 
@@ -107,7 +109,7 @@
 - [ ] `README.md`: use this format for license section:
 
     ```md
-    [The MIT License](https://piecioshka.mit-license.org) @ 2000
+    [The MIT License](https://piecioshka.mit-license.org) @ 2026
     ```
 
 - [ ] `README.md`: update badges, should have:
