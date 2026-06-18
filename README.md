@@ -9,7 +9,7 @@
   - there is not need to keep compiled files in Git repository
   - this directory will be in package uploaded to npm registry
 
-- [ ] remove LICENSE file from root directory
+- [ ] add LICENSE file from root directory (if there is not one), you can use [MIT License](https://piecioshka.mit-license.org) template
 
   - https://github.com/search?q=owner%3Apiecioshka%20path%3ALICENSE&type=code
 
@@ -73,12 +73,12 @@
   - `types/`
   - `index.js`
   - `package.json`
+  - `LICENSE`
   - `README.md`
 
 - [ ] `package.json/files`: should not includes
 
   - `.github/`
-  - `LICENSE`
 
 - [ ] `package.json/files`: ignore spec files:
 
