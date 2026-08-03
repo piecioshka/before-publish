@@ -62,7 +62,7 @@
 
   - `node`
 
-- [ ] `.nvmrc` should be defined in the root directory (not direct version, but code name, e.g. `hydrogen` for Node.js 24)
+- [ ] `.nvmrc` should be defined in the root directory (not direct version, but code name, e.g. `lts/krypton` for Node.js 24)
 
 - [ ] `package.json/files`: should includes:
 
@@ -142,6 +142,49 @@
   - github-ci (testing)
 
   Take a look at https://github.com/piecioshka/template-project
+
+- [ ] `package.json/scripts`: emoji must not be the **first token** of a command
+
+  `npm run` executes the first word as a program, so a leading emoji (or `:hammer:` nick) fails with `command not found`. Keep it as an argument:
+
+  ```json
+  {
+    "build": "echo 🔨 && tsc"
+  }
+  ```
+
+- [ ] run a dependency audit and check what is outdated:
+
+  ```bash
+  npm audit
+  npx npm-check
+  ```
+
+  - fix vulnerabilities before publishing — consumers inherit them
+  - a major bump that breaks the build is a finding, not a failure: check peer dependencies (`npm info <pkg> peerDependencies`) before assuming it is impossible
+  - a package used only in a `scripts` command (e.g. `detect-port`) is reported as unused — verify before removing it
+
+- [ ] verify the published file list **before** publishing:
+
+  ```bash
+  npm pack --dry-run
+  ```
+
+  - it prints exactly what lands in the tarball
+  - watch for secrets, `.env*` files, fixtures and screenshots that `files` does not exclude
+
+- [ ] `.gitignore`: ignore local env files, keep the example one
+
+  ```text
+  .env
+  .env.*
+  !.env.example
+  ```
+
+  - a committed `.env.local` is the usual way an API key leaks
+  - verify the history too, not just the working tree: `git log -S"<secret>"`
+
+- [ ] `README.md`: use `https://` in every link (never `http://`)
 
 - [ ] `.nycrc` for projects which use `nyc` and has spec files in the same directory as source files:
 
