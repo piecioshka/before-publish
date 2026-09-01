@@ -44,16 +44,19 @@
   }
   ```
 
-- [ ] `package.json/scripts`: add "version" to build changelog
+- [ ] `package.json/scripts`: add "postversion" to build changelog
 
-  Use the `version` hook, not `postversion` — `postversion` runs after npm
-  creates the tag, so updating the changelog there needs `git commit --amend`
-  and `git tag -f`. Keep the `-p` flag so the release lands under its version
-  number instead of an untagged heading.
+  Use the `postversion` hook, not `version`. `version` runs BEFORE npm creates
+  the tag, so auto-changelog has no release date to print and every version
+  lands in the file without one. Generating after the tag exists fills the date
+  in; `--amend` then folds CHANGELOG.md into the version commit and `git tag -f`
+  moves the tag onto it. Skip the `-p` flag here — the version comes from the
+  tag, and `-p` would add an empty duplicate heading. Keep any build step in
+  `version`, since it has to run before the version commit.
 
   ```json
   {
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "postversion": "auto-changelog && git add CHANGELOG.md && git commit --amend --no-edit --no-verify && git tag -f v$npm_package_version"
   }
   ```
 
