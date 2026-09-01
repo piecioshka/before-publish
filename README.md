@@ -46,11 +46,34 @@
 
 - [ ] `package.json/scripts`: add "version" to build changelog
 
+  Use the `version` hook, not `postversion` — `postversion` runs after npm
+  creates the tag, so updating the changelog there needs `git commit --amend`
+  and `git tag -f`. Keep the `-p` flag so the release lands under its version
+  number instead of an untagged heading.
+
   ```json
   {
     "version": "auto-changelog -p && git add CHANGELOG.md"
   }
   ```
+
+- [ ] `package.json`: configure `auto-changelog` (not a separate `.auto-changelog` file)
+
+  The default `commitLimit` is 3, so without this the changelog silently drops
+  commits from every release.
+
+  ```json
+  {
+    "auto-changelog": {
+      "commitLimit": false,
+      "backfillLimit": false,
+      "hideCredit": true
+    }
+  }
+  ```
+
+- [ ] `package.json/files`: add `CHANGELOG.md` when the repo has one, so the
+      published package ships its history
 
 - [ ] `package.json/devDependencies`: replace [istanbul](https://www.npmjs.com/package/istanbul) by [nyc](https://www.npmjs.com/package/nyc)
 
